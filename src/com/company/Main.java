@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("write operation ");
@@ -40,15 +40,16 @@ public class Main {
                 try {
                     int numberOne = Integer.parseInt(str[0]);
                     int numberTwo = Integer.parseInt(str[1]);
-//                    if(numberOne>10 && numberTwo>10) try {
-//                        throw new MyException();
-//                    } catch (MyException ex) {
-//                        System.out.println("");
-//                    }
-                    System.out.println(Calculate.calculate(numberOne, str[1], numberTwo));
+                    if(numberOne>10 || numberTwo>10) try {
+                        throw new MyException();
+                    } catch (MyException ex) {
+                        System.out.println("!!!");
+                        continue;
+                    }
+                    System.out.println(Calculate.calculate(numberOne, operation, numberTwo));
                 } catch (NumberFormatException c) {
                     System.out.println("вы вели не правильные данные! ");
-                    
+
                 }
             }
         }
